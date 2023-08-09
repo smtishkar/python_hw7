@@ -11,18 +11,49 @@
 
 from os import getcwd,listdir,path,rename
 
-#Тут меняем расширение
-extension_old=".txt" 
-extension_new=".csv"
 # def rename_function(wanted_name = "video", count_nums=3, extension_old=".txt", extension_new=".csv", wanted_range=[3, 6]):
-a= listdir
-initial_name = 'test.txt'
-file_name, file_extention = path.splitext(initial_name)
-if file_extention == '.txt':
-    new_name = rename(initial_name,file_name+'.csv')
 
-# file_name = path.splitext(file_name)[0]+'.cvs'
-# rename(file_name,'test.cvs')
+
+
+#Тут меняем расширение
+# initial_name = 'test.txt'
+# file_name, file_extention = path.splitext(initial_name)
+# if file_extention == '.txt':
+#     new_name = rename(initial_name,file_name+'.csv')
+# print(listdir())
+
+
+#тут меняем название файла
+# num_count = 5
+# wanted_name = 'video'
+# initial_name = 'test.txt'
+# count=125
+# temp=''
+# ZERO = '0'
+
+
+# for i in range(num_count-len(str(count))):
+#     temp += ZERO
+# new_count=temp+str(count)
+
+# file_name, file_extention = path.splitext(initial_name)
+# new_name = rename(initial_name,wanted_name+f'{new_count}'+file_extention)
+# print(listdir())
+
+
+#Тут будем делать срез в имени
+num_count = 5
+wanted_name = 'video'
+initial_name = 'test.txt'
+count=125
+temp=''
+ZERO = '0'
+
+
+for i in range(num_count-len(str(count))):
+    temp += ZERO
+new_count=temp+str(count)
+
+file_name, file_extention = path.splitext(initial_name)
+new_name = rename(initial_name,wanted_name+f'{new_count}'+file_extention)
 print(listdir())
-# print(file_name)
-# print(file_extention)
