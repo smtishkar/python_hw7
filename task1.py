@@ -9,8 +9,8 @@
 # rename(wanted_name = "video", count_nums=3, extension_old=".txt", extension_new=".csv", diapazon=[3, 6])
 # foto_2002.txt -> o_20video001.csv
 
-from os import getcwd, listdir, path, rename
-from pathlib import Path
+
+from os import listdir,path,rename
 
 
 def rename_function(wanted_name="video", count_nums=3, extension_old=".txt", extension_new=".csv", wanted_range=[3, 6]):
@@ -30,7 +30,8 @@ def rename_function(wanted_name="video", count_nums=3, extension_old=".txt", ext
             count += 1
 
 
-print(listdir())
-rename_function(wanted_name="-hello-", count_nums=5,
-                extension_old=".txt", extension_new=".jpg", wanted_range=[1, 6])
-print(listdir())
+if __name__ == '__main__':
+    print(f"Исходная директория - {listdir()}")
+    rename_function(wanted_name="-hello-", count_nums=5,
+                    extension_old=".txt", extension_new=".jpg", wanted_range=[1, 6])
+    print(f"Директория после преобразования - {listdir()}")
