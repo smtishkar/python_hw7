@@ -41,7 +41,11 @@ from os import getcwd,listdir,path,rename
 # print(listdir())
 
 
+
+
+
 #Тут будем делать срез в имени
+wanted_range=[3, 6]
 num_count = 5
 wanted_name = 'video'
 initial_name = 'test.txt'
@@ -54,6 +58,9 @@ for i in range(num_count-len(str(count))):
     temp += ZERO
 new_count=temp+str(count)
 
+wanted_name = 'video'
+initial_name = 'test.txt'
+
 file_name, file_extention = path.splitext(initial_name)
-new_name = rename(initial_name,wanted_name+f'{new_count}'+file_extention)
+new_name = rename(initial_name,file_name[wanted_range[0]:wanted_range[1]] + wanted_name+f'{new_count}'+file_extention)
 print(listdir())
