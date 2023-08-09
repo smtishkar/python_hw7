@@ -10,6 +10,7 @@
 # foto_2002.txt -> o_20video001.csv
 
 from os import getcwd,listdir,path,rename
+from pathlib import Path
 
 # def rename_function(wanted_name = "video", count_nums=3, extension_old=".txt", extension_new=".csv", wanted_range=[3, 6]):
 
@@ -48,19 +49,30 @@ from os import getcwd,listdir,path,rename
 wanted_range=[3, 6]
 num_count = 5
 wanted_name = 'video'
-initial_name = 'test.txt'
-count=125
+# initial_name = 'test.txt'
+wanted_extention = '.csv'
+initial_extention = '.txt'
+count=1
 temp=''
 ZERO = '0'
-
-
-for i in range(num_count-len(str(count))):
-    temp += ZERO
-new_count=temp+str(count)
-
 wanted_name = 'video'
-initial_name = 'test.txt'
 
-file_name, file_extention = path.splitext(initial_name)
-new_name = rename(initial_name,file_name[wanted_range[0]:wanted_range[1]] + wanted_name+f'{new_count}'+file_extention)
+
+print(listdir())
+
+for file in listdir():
+    file_name, file_extention = path.splitext(file)
+    if file_extention == '.txt':
+        for i in range(num_count-len(str(count))):
+            temp += ZERO
+        new_count=temp+str(count)
+        new_name = rename(file,file_name[wanted_range[0]:wanted_range[1]] + wanted_name+f'{new_count}'+wanted_extention)
+
+
+
+
+    # new_name = rename(initial_name,file_name+'.csv')
+
+
+
 print(listdir())
