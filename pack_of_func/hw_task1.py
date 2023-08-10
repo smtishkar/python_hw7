@@ -9,9 +9,9 @@
 # rename(wanted_name = "video", count_nums=3, extension_old=".txt", extension_new=".csv", diapazon=[3, 6])
 # foto_2002.txt -> o_20video001.csv
 
-
 from os import listdir,path,rename
 
+__all__ = ['rename_function']
 
 def rename_function(wanted_name="video", count_nums=3, extension_old=".txt", extension_new=".csv", wanted_range=[3, 6]):
     count = 1
